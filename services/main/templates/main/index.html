@@ -22,10 +22,10 @@
 					{% for service in portfolio %}
 					{% if cat.id == service.cat_id %}
 					<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 work-item">
-						<a href="{{ service.slug_title }}" title="Подробнее">
+						<a href="{{ service.slug_title }}" title="Подробнее" target="_blank">
 							<img src="{{ service.small_image }}" alt="image here" class="img-responsive">
 						</a>
-						<a href="{{ service.slug_title }}" title="Подробнее">
+						<a href="{{ service.slug_title }}" title="Подробнее" target="_blank">
 							<h3 class="fh5co-work-title">{{ service.title }}</h3>
 							<p><h5>{{ service.small_description }}</h5></p>
 						</a>

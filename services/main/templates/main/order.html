@@ -1,0 +1,34 @@
+{% extends 'main/base.html' %}
+{% load static %}
+		{% block nav %}
+		<nav id="fh5co-main-menu" role="navigation">
+				<ul>
+					<li><a href="{% url 'index' %}">Главная</a></li>
+					<li class="fh5co-active"><a href="{% url 'about' %}">О нас</a></li>
+					<li><a href="{% url 'contact' %}">Контакты</a></li>
+					<li><a href="{% url 'branch' %}">Филиалы</a></li>
+				</ul>
+			</nav>
+		{% endblock %}
+
+{% block content %}
+		<div id="fh5co-main">
+			<div class="fh5co-narrow-content">
+				{{ user.username }}<br>
+				<a href="{% url 'login' %}">Выйти</a>
+
+				<h5>вы авторизировались</h5>
+
+					{% for user_group in user.groups.all %}
+						{% if user_group.name == 'manager' %}
+							как менеджер
+						{% elif user_group.name == 'admin' %}
+							как админ
+						{% elif user_group.name == 'client' %}
+							как клиент
+						{% endif %}
+					{% endfor %}
+			</div>
+		</div>
+
+{% endblock %}

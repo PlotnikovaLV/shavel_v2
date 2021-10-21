@@ -1,0 +1,58 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+		{% block nav %}
+			<nav id="fh5co-main-menu" role="navigation">
+				<ul>
+					<li class="fh5co-active"><a href="{% url 'index' %}">Главная</a></li>
+					<li><a href="{% url 'about' %}">О нас</a></li>
+					<li><a href="{% url 'contact' %}">Контакты</a></li>
+					<li><a href="{% url 'branch' %}">Филиалы</a></li>
+				</ul>
+			</nav>
+		{% endblock %}
+
+{% block content %}
+
+		<div id="fh5co-main">
+			<div class="fh5co-narrow-content">
+
+				<div class="row">
+					<div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
+						<figure class="text-center">
+							<img src="{{ tender.large_image }}" alt="image here" class="img-responsive">
+						</figure>
+					</div>
+					<div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
+						<h1 align="center">{{ tender.title }}</h1>
+						<p>{{ tender.large_description|safe }}</p>
+					</div>
+
+				</div>
+
+
+
+				<div class="row work-pagination animate-box" data-animate-effect="fadeInLeft">
+					<div class="col-md-8 col-md-offset-2 col-sm-12 col-sm-offset-0">
+
+						<div class="col-md-4 col-sm-4 col-xs-4 text-center">
+							<a href="#"><i class="icon-long-arrow-left"></i> <span>Предыдущий</span></a>
+						</div>
+						<div class="col-md-4 col-sm-4 col-xs-4 text-center">
+							<a href="{% url 'index' %}" title="Главная"><i class="icon-th-large"></i></a>
+						</div>
+						<div class="col-md-4 col-sm-4 col-xs-4 text-center">
+							<a href="#"><span>Следующий</span> <i class="icon-long-arrow-right"></i></a>
+						</div>
+
+					</div>
+				</div>
+
+
+
+
+			</div>
+		</div>
+
+{% endblock %}
+

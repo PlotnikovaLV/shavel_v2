@@ -1,0 +1,75 @@
+{% extends 'main/base.html' %}
+{% load static %}
+		{% block nav %}
+		<nav id="fh5co-main-menu" role="navigation">
+				<ul>
+					<li><a href="{% url 'index' %}">Главная</a></li>
+					<li><a href="{% url 'about' %}">О нас</a></li>
+					<li><a href="{% url 'contact' %}">Контакты</a></li>
+					<li class="fh5co-active"><a href="{% url 'branch' %}">Филиалы</a></li>
+				</ul>
+			</nav>
+		{% endblock %}
+
+{% block content %}
+
+		<div id="fh5co-main">
+			<div id="map">
+				<iframe src="https://yandex.by/map-widget/v1/-/CCUqE0typA" width="100%" height="100%" position=absolute top=0px left=0px></iframe>
+			</div>
+			<div class="fh5co-more-contact">
+				<div class="fh5co-narrow-content">
+					<div class="row">
+						<div class="col-md-4">
+							<div class="fh5co-feature fh5co-feature-sm animate-box" data-animate-effect="fadeInLeft">
+								<div class="fh5co-icon">
+									<i class="icon-envelope-o"></i>
+								</div>
+								<div class="fh5co-text">
+									<p><a href="#">{{ email }}</a></p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="fh5co-feature fh5co-feature-sm animate-box" data-animate-effect="fadeInLeft">
+								<div class="fh5co-icon">
+									<i class="icon-map-o"></i>
+								</div>
+								<div class="fh5co-text">
+									<p>{{ address }}
+										<p>{{ day_working }}<br>
+									{{ working_time1 }}<br>
+									{{ working_time2 }}</p>
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="fh5co-feature fh5co-feature-sm animate-box" data-animate-effect="fadeInLeft">
+								<div class="fh5co-icon">
+									<i class="icon-phone"></i>
+								</div>
+								<div class="fh5co-text">
+									<p><a href="tel://">{{ phone }}</a></p>
+								</div>
+								<div class="fh5co-text">
+									<p><a href="tel://">{{ phone2 }}</a></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+
+							</div>
+						</div>
+						
+					</div>
+				</form>
+			</div>
+
+		</div>
+{% endblock %}
+

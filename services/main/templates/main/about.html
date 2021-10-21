@@ -1,0 +1,114 @@
+{% extends 'main/base.html' %}
+{% load static %}
+		{% block nav %}
+		<nav id="fh5co-main-menu" role="navigation">
+				<ul>
+					<li><a href="{% url 'index' %}">Главная</a></li>
+					<li class="fh5co-active"><a href="{% url 'about' %}">О нас</a></li>
+					<li><a href="{% url 'contact' %}">Контакты</a></li>
+					<li><a href="{% url 'branch' %}">Филиалы</a></li>
+				</ul>
+			</nav>
+		{% endblock %}
+
+{% block content %}
+		<div id="fh5co-main">
+			<div class="fh5co-narrow-content">
+				<div class="row">
+					<div class="col-md-5">
+						<h2 class="fh5co-heading animate-box" data-animate-effect="fadeInLeft">Сервис услуг для офиса и бизнеса</h2>
+						<p class="fh5co-lead animate-box" data-animate-effect="fadeInLeft">Окказываем услуги юридическим лицам, организациям и предприятиям</p>
+						<p class="animate-box" data-animate-effect="fadeInLeft">На рынке более 20 лет, обслуживание в Дзержинском, Столбцовском, Минском районах и Минске. Специализация на картриджах, принтерах, МФУ, дополнительно ремонт источников бесперебойногопитания, ремонт компьютерной техники и ноутбуков На рынке более 10 лет, обслуживание в Дзержинском, Столбцовском, Минском районах и Минске. Специализация на картриджах, принтерах, МФУ, дополнительно ремонт источников бесперебойногопитания, ремонт компьютерной техники и ноутбуков</p>
+					</div>
+					<div class="col-md-6 col-md-push-1 animate-box" data-animate-effect="fadeInLeft">
+						<img src="{% static 'images/img_1.jpg' %}" alt="image here" class="img-responsive">
+						<p></p>
+						<img src="{% static 'images/img_1.jpg' %}" alt="image here" class="img-responsive">
+					</div>
+				</div>
+				
+			</div>
+<!--сотрудники-->
+			<div class="fh5co-cards">
+			<div class="fh5co-narrow-content  animate-box" data-animate-effect="fadeInLeft">
+				<h2 class="fh5co-heading" >Команда</span></h2>
+				<div class="row">
+					{% for person in team %}
+					<div class="col-md-4 fh5co-staff">
+						<img src="{{ person.image }}" alt="image here" class="img-responsive">
+						<h3>{{ person.l_name }} {{ person.f_name }} {{ person.patronymic }}</h3>
+						<br>
+						<h4>{{ person.post }}</h4>
+						<p>{{ person.description }}</p>
+						<!--иконки и ссылки на профили-->
+						<!--<ul class="fh5co-social">
+							<li><a href="#"><i class="icon-google"></i></a></li>
+							<li><a href="#"><i class="icon-dribbble"></i></a></li>
+							<li><a href="#"><i class="icon-twitter"></i></a></li>
+							<li><a href="#"><i class="icon-facebook"></i></a></li>
+							<li><a href="#"><i class="icon-instagram"></i></a></li>
+						</ul>-->
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+			</div>
+<!--тип с галереи/портфолио-->
+			<div class="fh5co-narrow-content">
+				<h2 class="fh5co-heading animate-box" data-animate-effect="fadeInLeft">Наши клиенты</h2>
+				<div class="row animate-box" data-animate-effect="fadeInLeft" align="center">
+				{% for con in interaction_con %}
+					{% if con.connection == 'Клиент' %}
+						{% for obj in object_int %}
+						{% if obj.con_id == con.id %}
+					<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 work-item">
+							<img src="{{ obj.image_logo }}" alt="image here" class="img-responsive">
+					</div>
+						{% endif %}
+						{% endfor %}
+					{% endif %}
+				{% endfor %}
+				</div>
+			</div>
+			<div class="fh5co-narrow-content">
+				<h2 class="fh5co-heading animate-box" data-animate-effect="fadeInLeft">Наши партнеры</h2>
+				<div class="row animate-box" data-animate-effect="fadeInLeft" align="center">
+				{% for con in interaction_con %}
+					{% if con.connection == 'Партнёр' %}
+						{% for obj in object_int %}
+						{% if obj.con_id == con.id %}
+					<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 work-item">
+							<img src="{{ obj.image_logo }}" alt="image here" class="img-responsive">
+					</div>
+						{% endif %}
+						{% endfor %}
+					{% endif %}
+				{% endfor %}
+				</div>
+			</div>
+
+			<div class="fh5co-narrow-content">
+				<div class="row">
+					<div class="col-md-4 animate-box" data-animate-effect="fadeInLeft">
+						<h1 class="fh5co-heading-colored">Работайте с нами!</h1>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4 animate-box" data-animate-effect="fadeInLeft">
+						<p class="fh5co-lead">Мы оперативно и качественно поможем Вам в решении вопросов с оргтехникой и переферийными устройствами, что обеспечит Вам прибыль и стабильность.</p>
+						<p><a href="#" class="btn btn-primary btn-outline">Обращение или читать больше???</a></p>
+					</div>
+					<div class="col-md-7 col-md-push-1">
+						<div class="row">
+							<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+								<p>Заключение договора обслуживания. Гибкая система скидок. Консультации и сопровождение. Выделение логина и пароля входа в кабинет клиента для подачи заявки в режиме онлайн</p>
+							</div>
+							<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+								<p>Предоставление развернутых актов выполненных работ, гарантия качества, предоставление подробностей ремнтов, инструктаж по эксплуатации. Оперативное реагирование.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+{% endblock %}

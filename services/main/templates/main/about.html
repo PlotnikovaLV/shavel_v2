@@ -29,30 +29,37 @@
 				
 			</div>
 <!--сотрудники-->
-			<div class="fh5co-cards">
+
 			<div class="fh5co-narrow-content  animate-box" data-animate-effect="fadeInLeft">
-				<h2 class="fh5co-heading" >Команда</span></h2>
-				<div class="row">
+				<h2 class="fh5co-heading">Команда</h2>
+
+					<div class="row center slider">
 					{% for person in team %}
-					<div class="col-md-4 fh5co-staff">
-						<img src="{{ person.image }}" alt="image here" class="img-responsive">
-						<h3>{{ person.l_name }} {{ person.f_name }} {{ person.patronymic }}</h3>
-						<br>
-						<h4>{{ person.post }}</h4>
-						<p>{{ person.description }}</p>
-						<!--иконки и ссылки на профили-->
+						<div class="col-lg-4 agileits_ser-img_grid">
+                        <div class="w3l_serv-slider_grid">
+						   <div class="w3ls-slide-img">
+                              <img src="{{ person.image }}" alt="image here" class="img-responsive" />
+                           </div>
+                           <div class="w3l_service_grid">
+							   <h3>{{ person.l_name }} {{ person.f_name }} {{ person.patronymic }}</h3>
+							   <h4>{{ person.post }}</h4>
+                              <p>{{ person.description }}</p>
+							   <!--иконки и ссылки на профили-->
 						<!--<ul class="fh5co-social">
 							<li><a href="#"><i class="icon-google"></i></a></li>
 							<li><a href="#"><i class="icon-dribbble"></i></a></li>
 							<li><a href="#"><i class="icon-twitter"></i></a></li>
 							<li><a href="#"><i class="icon-facebook"></i></a></li>
 							<li><a href="#"><i class="icon-instagram"></i></a></li>
-						</ul>-->
-					</div>
+							</ul>-->
+                           </div>
+
+                        </div>
+                     	</div>
 					{% endfor %}
-				</div>
+					</div>
 			</div>
-			</div>
+
 <!--тип с галереи/портфолио-->
 			<div class="fh5co-narrow-content">
 				<h2 class="fh5co-heading animate-box" data-animate-effect="fadeInLeft">Наши клиенты</h2>

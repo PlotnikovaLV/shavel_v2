@@ -1,1 +1,0 @@
-$(document).ready(function(){$('.slider-slick').slick({setting-name: setting-value});});
